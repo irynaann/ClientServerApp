@@ -22,7 +22,7 @@ public class ClientHandler implements Runnable {
     public void run() {
         try (
                 BufferedReader input = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
-                PrintWriter output = new PrintWriter(clientSocket.getOutputStream());
+                PrintWriter output = new PrintWriter(clientSocket.getOutputStream(), true);
 
         ) {
             output.println("Привіт, " + clientName + "! Напиши exit щоб вийти");
