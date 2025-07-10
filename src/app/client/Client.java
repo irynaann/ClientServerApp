@@ -26,13 +26,13 @@ public class Client {
 
             while (true) {
                 String message = scanner.nextLine();
+                out.println(message);
 
                 String serverResponse = in.readLine();
                 if (serverResponse != null) {
                     System.out.println("[SERVER]: " + serverResponse);
                 }
 
-                out.println(message);
 
                 if (message.trim().equalsIgnoreCase("exit")) {
                     break;
