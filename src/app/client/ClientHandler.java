@@ -6,6 +6,8 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 
+import static app.server.Server.connections;
+
 public class ClientHandler implements Runnable {
 
 
@@ -35,6 +37,7 @@ public class ClientHandler implements Runnable {
                 if (message.equalsIgnoreCase("exit")) {
                     output.println("Бувай!");
                     System.out.println("[SERVER] " + clientName + " відключився");
+                    connections.removeIf(c -> c.getClientName().equals(clientName));
                     break;
                 }
 

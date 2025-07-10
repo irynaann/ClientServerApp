@@ -15,7 +15,7 @@ public class Server {
     private static final int PORT = 8080;
     private static AtomicInteger clientCounter = new AtomicInteger(1);
 
-    private static List<Connection> connections = new ArrayList<>();
+    public static List<Connection> connections = new ArrayList<>();
 
     public static void main(String[] args) {
 
