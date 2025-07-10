@@ -28,7 +28,7 @@ public class ClientHandler implements Runnable {
                 PrintWriter output = new PrintWriter(clientSocket.getOutputStream(), true);
 
         ) {
-            output.println("Привіт, " + clientName + "! Напиши exit щоб вийти");
+            output.println("Привіт, " + clientName + "! Напишіть своє повідомлення або exit щоб вийти");
 
             String message;
             while ((message = input.readLine()) != null) {
