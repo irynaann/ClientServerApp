@@ -18,6 +18,7 @@ public class ClientHandler implements Runnable {
     public ClientHandler(Socket clientSocket, String clientName, String connectTime) {
         this.clientSocket = clientSocket;
         this.clientName = clientName;
+        this.connectTime = connectTime;
     }
 
 

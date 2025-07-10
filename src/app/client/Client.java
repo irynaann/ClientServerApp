@@ -20,13 +20,10 @@ public class Client {
                 BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
                 Scanner scanner = new Scanner(System.in)
         ) {
-            System.out.println("[CLIENT] Ви під'єдналися. ");
+            System.out.println("[CLIENT]: Ви під'єдналися. ");
 
-            String serverResponse = in.readLine();
-
-            if (serverResponse != null) {
-                System.out.println("[SERVER]: " + serverResponse);
-            }
+            String greeting = in.readLine();
+            System.out.println("[SERVER]: " + greeting);
 
             while (true) {
                 String message = scanner.nextLine();
@@ -36,10 +33,9 @@ public class Client {
                     break;
                 }
 
-                serverResponse = in.readLine();
-                if (serverResponse != null) {
-                    System.out.println("[SERVER]: " + serverResponse);
-                }
+                String serverResponse = in.readLine();
+                System.out.println("[SERVER]: " + serverResponse);
+
 
             }
 

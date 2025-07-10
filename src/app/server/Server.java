@@ -20,9 +20,9 @@ public class Server {
     public static void main(String[] args) {
 
         try (ServerSocket serverSocket = new ServerSocket(PORT)) {
-            while (true) {
-                System.out.println("[SERVER] Сервер запущено на порту " + PORT);
+            System.out.println("[SERVER] Сервер запущено на порту " + PORT);
 
+            while (true) {
                 Socket clientSocket = serverSocket.accept();
                 String clientName = "client-" + clientCounter.incrementAndGet();
                 String connectTime = LocalDateTime.now().toString();
