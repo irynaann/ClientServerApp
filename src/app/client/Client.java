@@ -20,23 +20,27 @@ public class Client {
                 BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
                 Scanner scanner = new Scanner(System.in)
         ) {
-            System.out.println("[CLIENT] Ви під'єдналися. Напишіть своє повідомлення: ");
-            System.out.println("[CLIENT] Напишіть exit, щоб вийти: ");
+            System.out.println("[CLIENT] Ви під'єдналися. ");
 
+            String serverResponse = in.readLine();
+
+            if (serverResponse != null) {
+                System.out.println("[SERVER]: " + serverResponse);
+            }
 
             while (true) {
                 String message = scanner.nextLine();
                 out.println(message);
 
-                String serverResponse = in.readLine();
+                if (message.trim().equalsIgnoreCase("exit")) {
+                    break;
+                }
+
+                serverResponse = in.readLine();
                 if (serverResponse != null) {
                     System.out.println("[SERVER]: " + serverResponse);
                 }
 
-
-                if (message.trim().equalsIgnoreCase("exit")) {
-                    break;
-                }
             }
 
         } catch (IOException e) {
